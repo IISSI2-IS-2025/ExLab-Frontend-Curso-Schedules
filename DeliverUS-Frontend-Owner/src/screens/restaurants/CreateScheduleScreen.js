@@ -11,6 +11,7 @@ import TextError from '../../components/TextError'
 import { createSchedule } from '../../api/RestaurantEndpoints'
 
 export default function CreateScheduleScreen ({ navigation, route }) {
+  /* SOLUTION */
   const [backendErrors, setBackendErrors] = useState()
   const initialScheduleValues = { startTime: null, endTime: null }
   const validationSchema = yup.object().shape({
@@ -40,7 +41,7 @@ export default function CreateScheduleScreen ({ navigation, route }) {
         style: GlobalStyles.flashStyle,
         titleStyle: GlobalStyles.flashTextStyle
       })
-      navigation.navigate('RestaurantDetailScreen', { id: route.params.id })
+      navigation.navigate('RestaurantDetailScreen', { id: route.params.id, dirty: true })
     } catch (error) {
       console.log(error)
       setBackendErrors(error.errors)

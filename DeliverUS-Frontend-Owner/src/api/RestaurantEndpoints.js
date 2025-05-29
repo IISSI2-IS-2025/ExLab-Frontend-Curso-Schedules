@@ -28,6 +28,11 @@ const getRestaurantSchedules = (id) => {
   return get(`/restaurants/${id}/schedules`)
 }
 
+/* SOLUTION */
+const getRestaurantSchedule = async (restaurantId, scheduleId) => {
+  return (await getRestaurantSchedules(restaurantId)).find(schedule => schedule.id === scheduleId)
+}
+
 const createSchedule = (restaurantId, data) => {
   return post(`/restaurants/${restaurantId}/schedules`, data)
 }
@@ -40,4 +45,4 @@ const removeSchedule = (restaurantId, scheduleId) => {
   return destroy(`/restaurants/${restaurantId}/schedules/${scheduleId}`)
 }
 
-export { getAll, getDetail, getRestaurantCategories, create, update, remove, getRestaurantSchedules, createSchedule, updateSchedule, removeSchedule }
+export { getAll, getDetail, getRestaurantCategories, create, update, remove, getRestaurantSchedules, createSchedule, updateSchedule, removeSchedule, getRestaurantSchedule }

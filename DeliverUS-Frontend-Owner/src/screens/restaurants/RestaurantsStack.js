@@ -51,6 +51,7 @@ export default function RestaurantsStack () {
         options={{
           title: 'Edit Product'
         }} />
+        {/* SOLUTION */}
         <Stack.Screen
         name='RestaurantSchedulesScreen'
         component={RestaurantSchedulesScreen}
@@ -63,7 +64,12 @@ export default function RestaurantsStack () {
         options={{
           title: 'Create Schedule'
         }} />
-
+        <Stack.Screen
+        name='EditScheduleScreen'
+        component={EditScheduleScreen}
+        options={{
+          title: 'Edit Schedule'
+        }} />
     </Stack.Navigator>
   )
 }
